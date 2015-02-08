@@ -17,7 +17,7 @@ public final class GastosContract {
         public static final String COLUMN_TIPO ="tipo";
         public static final String COLUMN_CANTIDAD = "cantidad";
         public static final String COLUMN_FECHA = "fecha";
-        public static final String COLUMN_CUENTA = "cuenta_fuentes";
+        public static final String COLUMN_CUENTA = "cuenta_fuente";
 
 
     }
