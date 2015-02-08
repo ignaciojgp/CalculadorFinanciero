@@ -3,6 +3,8 @@ package com.ignaciojgp.www.calculadorfinanciero.dto;
 /**
  * Created by ignacio on 25/01/2015.
  */
+
+// comentario aparte
 public class Cuenta {
     private double saldo;
     private String nombre;
