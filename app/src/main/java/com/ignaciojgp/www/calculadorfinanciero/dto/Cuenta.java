@@ -7,18 +7,10 @@ package com.ignaciojgp.www.calculadorfinanciero.dto;
 // comentario aparte
 public class Cuenta {
     private double saldo;
-    private String nombre;
-    private int ide;
+    private String nombre, color;
+    private int id;
 
-    public Cuenta(double saldo, String nombre, int ide) {
-        this.saldo = saldo;
-        this.nombre = nombre;
-        this.ide = ide;
-    }
 
-    public int getIde() {
-        return ide;
-    }
 
     public double getSaldo() {
         return saldo;
@@ -36,5 +28,19 @@ public class Cuenta {
         this.nombre = nombre;
     }
 
+    public String getColor() {
+        return color;
+    }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

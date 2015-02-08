@@ -15,22 +15,13 @@ public class Movimiento implements Serializable {
         EGRESO
     }
 
+
     private String titulo, descripcion;
-    private int tipo;
+    private int tipo,cuenta,categoria,id;
     private double cantidad;
     private Date fecha;
-    private int cuenta_fuente;
 
 
-
-    public Movimiento(String titulo, String descripcion, int tipo, double cantidad, Date fecha, int cuenta_fuente) {
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.tipo = tipo;
-        this.cantidad = cantidad;
-        this.fecha = fecha;
-        this.cuenta_fuente = cuenta_fuente;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -56,6 +47,22 @@ public class Movimiento implements Serializable {
         this.tipo = tipo;
     }
 
+    public int getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(int cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public int getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
+    }
+
     public double getCantidad() {
         return cantidad;
     }
@@ -72,12 +79,11 @@ public class Movimiento implements Serializable {
         this.fecha = fecha;
     }
 
-    public int getCuenta_fuente() {
-        return cuenta_fuente;
+    public int getId() {
+        return id;
     }
 
-    public void setCuenta_fuente(int cuenta_fuente) {
-        this.cuenta_fuente = cuenta_fuente;
+    public void setId(int id) {
+        this.id = id;
     }
-
 }
