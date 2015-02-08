@@ -12,7 +12,7 @@ public class GastosDbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Gastos.db";
 
-    public GastosDbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public GastosDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

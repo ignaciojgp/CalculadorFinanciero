@@ -1,6 +1,7 @@
 package com.ignaciojgp.www.calculadorfinanciero.dao;
 
 import android.app.Activity;
+import android.database.Cursor;
 
 import com.ignaciojgp.www.calculadorfinanciero.dto.Categoria;
 import com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta;
@@ -14,10 +15,12 @@ import java.util.List;
  */
 public interface Gastos {
 
-    public List<Movimiento> getMovimientos();
-    public List<Cuenta> getCuentas();
-    public List<Categoria> getCategorias();
-    public List<Periodo> getPeriodos();
+    public Cursor getMovimientos();
+    public Cursor getMovimientos(Periodo periodo);
+
+    public Cursor getCuentas();
+    public Cursor getCategorias();
+    public Cursor getPeriodos();
 
     public Movimiento save(Movimiento movimiento);
     public Periodo save(Periodo periodo);

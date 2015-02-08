@@ -10,12 +10,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.ignaciojgp.www.calculadorfinanciero.adapters.PeriodosAdapter;
-import com.ignaciojgp.www.calculadorfinanciero.dao.GastosJSON;
+import com.ignaciojgp.www.calculadorfinanciero.dao.Gastos;
+import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
 
 
 public class ListaGastos extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
-    GastosJSON gastos;
+    Gastos gastos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,7 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_lista_gastos);
 
 
-        gastos = new GastosJSON(this);
+        gastos = new GastosDB(this);
 
 
         PeriodosAdapter pa = new PeriodosAdapter(gastos.getPeriodos(),this);
@@ -69,7 +70,7 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
     protected void onStop() {
         super.onStop();
 
-        gastos.Save();
+
 
     }
 
