@@ -13,11 +13,11 @@ public final class GastosContract {
 
         public static final String TABLE_NAME="movimiento";
 
-        private String titulo, descripcion;
-        private static final String COLUMN_TIPO ="tipo";
-        private static final String COLUMN_CANTIDAD = "cantidad";
-        private static final String COLUMN_FECHA = "fecha";
-        private static final String COLUMN_CUENTA = "cuenta_fuentes";
+        public String titulo, descripcion;
+        public static final String COLUMN_TIPO ="tipo";
+        public static final String COLUMN_CANTIDAD = "cantidad";
+        public static final String COLUMN_FECHA = "fecha";
+        public static final String COLUMN_CUENTA = "cuenta_fuentes";
 
 
     }
