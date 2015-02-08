@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
  */
 public final class GastosContract {
 
-    public GastosContract(){};
+    public GastosContract(){}
 
     public static abstract class GastosEntry implements BaseColumns{
 
@@ -17,7 +17,7 @@ public final class GastosContract {
         private static final String COLUMN_TIPO ="tipo";
         private static final String COLUMN_CANTIDAD = "cantidad";
         private static final String COLUMN_FECHA = "fecha";
-        private static final String COLUMN_CUENTA = "cuenta_fuente";
+        private static final String COLUMN_CUENTA = "cuenta_fuentes";
 
 
     }
