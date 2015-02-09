@@ -17,7 +17,7 @@ public class Movimiento implements Serializable {
 
 
     private String titulo, descripcion;
-    private int tipo,cuenta,categoria,id;
+    private long tipo,cuenta,categoria,id;
     private double cantidad;
     private Date fecha;
 
@@ -39,7 +39,7 @@ public class Movimiento implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public int getTipo() {
+    public long getTipo() {
         return tipo;
     }
 
@@ -47,7 +47,7 @@ public class Movimiento implements Serializable {
         this.tipo = tipo;
     }
 
-    public int getCuenta() {
+    public long getCuenta() {
         return cuenta;
     }
 
@@ -55,7 +55,7 @@ public class Movimiento implements Serializable {
         this.cuenta = cuenta;
     }
 
-    public int getCategoria() {
+    public long getCategoria() {
         return categoria;
     }
 
@@ -79,11 +79,11 @@ public class Movimiento implements Serializable {
         this.fecha = fecha;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

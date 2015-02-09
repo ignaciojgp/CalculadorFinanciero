@@ -14,8 +14,8 @@ public final class GastosContract {
     public static final String _TYPE_REAL = " REAL ";
     public static final String _SP = " ";
     public static final String _COMMA = " , ";
-    public static final String _PRIMARY_KEY = " PRIMARY_KEY ";
-    public static final String _AUTOINCREMENT = " AUTOINCREMENT ";
+    public static final String _PRIMARY_KEY = " PRIMARY KEY ";
+    public static final String _AUTOINCREMENT = " AUTOINCREMENT  ";
     public static final String _CREATE = "CREATE TABLE ";
     public static final String _DROP = "DROP TABLE IF EXIST ";
 
@@ -46,8 +46,8 @@ public final class GastosContract {
         public static final String COLUMN_TIPO = "tipo";
         public static final String COLUMN_TIPO_TYPE = _TYPE_INT;
 
-        public static final String CREATE = _CREATE+TABLE_NAME+" ("+
-                _ID+_TYPE_INT+_AUTOINCREMENT +_COMMA +
+        public static final String CREATE = _CREATE+TABLE_NAME+" ( "+
+                _ID+_TYPE_INT+_PRIMARY_KEY+_AUTOINCREMENT +_COMMA +
                 COLUMN_TITULO + COLUMN_TITULO_TYPE+_COMMA+
                 COLUMN_DESCRIPCION +COLUMN_DESCRIPCION_TYPE+_COMMA+
                 COLUMN_CATEGORIA + COLUMN_CATEGORIA_TYPE +_COMMA+
@@ -77,8 +77,8 @@ public final class GastosContract {
 
 
 
-        public static final String CREATE = _CREATE+TABLE_NAME+" ("+
-                _ID+_TYPE_INT+_AUTOINCREMENT +_COMMA +
+        public static final String CREATE = _CREATE+TABLE_NAME+" ( "+
+                _ID+_TYPE_INT+_PRIMARY_KEY+_AUTOINCREMENT +_COMMA +
                 COLUMN_NOMBRE+COLUMN_NOMBRE_TYPE+_COMMA+
                 COLUMN_COLOR+COLUMN_COLOR_TYPE+_COMMA+
                 COLUMN_SALDO+COLUMN_SALDO_TYPE+
@@ -98,8 +98,8 @@ public final class GastosContract {
         public static final String COLUMN_COLOR = "color";
         public static final String COLUMN_COLOR_TYPE = _TYPE_TEXT;
 
-        public static final String CREATE = _CREATE+TABLE_NAME+" ("+
-                _ID+_TYPE_INT+_AUTOINCREMENT +_COMMA +
+        public static final String CREATE = _CREATE+TABLE_NAME+" ( "+
+                _ID+_TYPE_INT+_PRIMARY_KEY+_AUTOINCREMENT +_COMMA +
                 COLUMN_NOMBRE+COLUMN_NOMBRE_TYPE+_COMMA+
                 COLUMN_COLOR+COLUMN_COLOR_TYPE+
                 " )";
@@ -118,8 +118,8 @@ public final class GastosContract {
         public static final String COLUMN_FINAL = "fin";
         public static final String COLUMN_FINAL_TYPE = _TYPE_INT;
 
-        public static final String CREATE = _CREATE+TABLE_NAME+" ("+
-                _ID+_TYPE_INT+_AUTOINCREMENT +_COMMA +
+        public static final String CREATE = _CREATE+TABLE_NAME+" ( "+
+                _ID+_TYPE_INT+_PRIMARY_KEY+_AUTOINCREMENT +_COMMA +
                 COLUMN_INICIO+COLUMN_INICIO_TYPE+_COMMA+
                 COLUMN_FINAL+COLUMN_FINAL_TYPE+
                 " )";

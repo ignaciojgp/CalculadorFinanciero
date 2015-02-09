@@ -1,15 +1,21 @@
 package com.ignaciojgp.www.calculadorfinanciero;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CursorAdapter;
 import android.widget.ListView;
 
-import com.ignaciojgp.www.calculadorfinanciero.adapters.PeriodosAdapter;
+import com.ignaciojgp.www.calculadorfinanciero.DataBases.GastosDbHelper;
+import com.ignaciojgp.www.calculadorfinanciero.adapters.MovimientosCursorAdapter;
 import com.ignaciojgp.www.calculadorfinanciero.dao.Gastos;
 import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
 
@@ -24,18 +30,17 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_lista_gastos);
 
 
-        gastos = new GastosDB(this);
-
-
-        PeriodosAdapter pa = new PeriodosAdapter(gastos.getPeriodos(),this);
-
-        ListView lv = (ListView) findViewById(R.id.listView1);
-
-        lv.setAdapter(pa);
-
 
     }
 
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        new MovimientosLoader().execute(this);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -78,4 +83,44 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
+
+    private class MovimientosLoader extends AsyncTask<Activity ,Void,Cursor >{
+
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+
+        }
+
+        @Override
+        protected void onPostExecute(Cursor cursor) {
+            super.onPostExecute(cursor);
+
+            MovimientosCursorAdapter adapter = new MovimientosCursorAdapter(getApplicationContext(),cursor,false);
+
+            ListView lv = (ListView) findViewById(R.id.listView1);
+
+            lv.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            lv.refreshDrawableState();
+
+
+
+        }
+
+        @Override
+        protected Cursor doInBackground(Activity... params) {
+
+
+            GastosDB gastosDB = new GastosDB(params[0]);
+
+            return gastosDB.getMovimientos();
+
+        }
+    }
+
 }

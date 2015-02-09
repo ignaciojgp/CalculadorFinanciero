@@ -5,23 +5,23 @@ package com.ignaciojgp.www.calculadorfinanciero.dto;
  */
 public class Categoria {
 
-    private int id;
-    private String titulo,color;
+    private long id;
+    private String nombre,color;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getColor() {

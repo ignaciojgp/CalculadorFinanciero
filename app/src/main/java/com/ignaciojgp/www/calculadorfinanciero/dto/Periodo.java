@@ -7,7 +7,7 @@ import java.util.List;
  * Created by ignacio on 25/01/2015.
  */
 public class Periodo {
-    private int id;
+    private long id;
     private Date inicio, fin;
 
     public Periodo(int id, Date inicio, Date fin) {
@@ -16,11 +16,11 @@ public class Periodo {
         this.fin = fin;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
