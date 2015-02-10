@@ -1,19 +1,30 @@
 package com.ignaciojgp.www.calculadorfinanciero.DataBases;
 
+import android.app.Activity;
+import android.app.Application;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.ignaciojgp.www.calculadorfinanciero.dao.Gastos;
+import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
+import com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta;
 
 /**
  * Created by ignacio on 07/02/2015.
  */
 public class GastosDbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 5;
     public static final String DATABASE_NAME = "Gastos.db";
 
-    public GastosDbHelper(Context context) {
+    Activity parent;
+
+    public GastosDbHelper(Activity context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        parent = context;
+
     }
 
     @Override
@@ -23,6 +34,33 @@ public class GastosDbHelper extends SQLiteOpenHelper {
         db.execSQL(GastosContract.CuentaEntry.CREATE);
         db.execSQL(GastosContract.PeriodoEntry.CREATE);
         db.execSQL(GastosContract.CategoriaEntry.CREATE);
+
+
+
+
+        ContentValues cuentaInicial = new ContentValues();
+
+        cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_COLOR, "ff0000");
+        cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_NOMBRE, "Cuenta Base");
+        cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_SALDO, 10);
+
+        db.insert(
+                GastosContract.CuentaEntry.TABLE_NAME,
+                null,
+                cuentaInicial
+        );
+
+        ContentValues categoriaInicial = new ContentValues();
+
+        categoriaInicial.put(GastosContract.CategoriaEntry.COLUMN_COLOR, "ff00FF");
+        categoriaInicial.put(GastosContract.CategoriaEntry.COLUMN_NOMBRE, "Gasto Generico");
+
+
+        db.insert(
+                GastosContract.CategoriaEntry.TABLE_NAME,
+                null,
+                categoriaInicial
+        );
 
     }
 

@@ -90,13 +90,6 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
 
 
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-
-        }
-
-        @Override
         protected void onPostExecute(Cursor cursor) {
             super.onPostExecute(cursor);
 

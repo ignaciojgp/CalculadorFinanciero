@@ -12,5 +12,7 @@
     <string name="gasto">Gasto</string>
     <string name="ingreso">Ingreso</string>
     <string name="guardar">Guardar</string>
+    <string name="cuenta">Cuenta</string>
+    <string name="Categoria">Categoría</string>
 
 </resources>

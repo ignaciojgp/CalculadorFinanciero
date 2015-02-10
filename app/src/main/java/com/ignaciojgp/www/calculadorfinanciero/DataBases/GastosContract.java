@@ -17,7 +17,7 @@ public final class GastosContract {
     public static final String _PRIMARY_KEY = " PRIMARY KEY ";
     public static final String _AUTOINCREMENT = " AUTOINCREMENT  ";
     public static final String _CREATE = "CREATE TABLE ";
-    public static final String _DROP = "DROP TABLE IF EXIST ";
+    public static final String _DROP = "DROP TABLE IF EXISTS ";
 
 
 
