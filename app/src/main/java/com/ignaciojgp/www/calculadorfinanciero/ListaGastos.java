@@ -60,6 +60,7 @@ public class ListaGastos extends ActionBarActivity implements AdapterView.OnItem
         if (id == R.id.action_add) {
 
             Intent i = new Intent();
+
             i.setClass(this,Movimiento.class);
 
             startActivity(i);

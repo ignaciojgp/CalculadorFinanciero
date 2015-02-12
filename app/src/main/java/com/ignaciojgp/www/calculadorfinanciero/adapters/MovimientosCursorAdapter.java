@@ -14,8 +14,6 @@ import com.ignaciojgp.www.calculadorfinanciero.DataBases.GastosContract;
 import com.ignaciojgp.www.calculadorfinanciero.R;
 import com.ignaciojgp.www.calculadorfinanciero.dto.Periodo;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,19 +37,13 @@ public class MovimientosCursorAdapter extends CursorAdapter {
 
         TextView titulo_tv = (TextView)view.findViewById(R.id.textView);
         TextView cantidad_tv = (TextView)view.findViewById(R.id.textView2);
-        TextView fecha_tv = (TextView)view.findViewById(R.id.textView3);
 
         String titulo = cursor.getString( cursor.getColumnIndexOrThrow(GastosContract.MovimientoEntry.COLUMN_TITULO));
         double cantidad =  cursor.getDouble( cursor.getColumnIndexOrThrow(GastosContract.MovimientoEntry.COLUMN_CANTIDAD));
-        Date fecha = new Date(cursor.getLong(cursor.getColumnIndex(GastosContract.MovimientoEntry.COLUMN_FECHA)));
-
 
         titulo_tv.setText(titulo);
         cantidad_tv.setText(String.valueOf(cantidad));
 
-        DateFormat df= DateFormat.getDateInstance();
-
-        fecha_tv.setText(df.format(fecha));
     }
 
 
