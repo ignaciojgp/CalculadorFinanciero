@@ -24,17 +24,11 @@ import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
  * create an instance of this fragment.
  */
 public class MovimientosFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-
-
-    // TODO: Rename and change types of parameters
 
 
     private OnFragmentInteractionListener mListener;
 
 
-    // TODO: Rename and change types and number of parameters
     public static MovimientosFragment newInstance() {
         MovimientosFragment fragment = new MovimientosFragment();
         Bundle args = new Bundle();
@@ -57,11 +51,6 @@ public class MovimientosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-
-
-
 
         return inflater.inflate(R.layout.fragment_movimientos, container, false);
     }
@@ -75,7 +64,7 @@ public class MovimientosFragment extends Fragment {
 
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

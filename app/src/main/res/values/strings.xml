@@ -13,24 +13,18 @@
     <string name="ingreso">Ingreso</string>
     <string name="guardar">Guardar</string>
     <string name="cuenta">Cuenta</string>
-    <string name="Categoria">Categoria</string>
+    <string name="Categoria">Categoría</string>
     <string name="title_activity_mis_gastos">Mis gastos</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
-
-    <array name="planets_array">
-        <item>Uno</item>
-        <item>Dos</item>
-        <item>Tres</item>
-    </array>
-
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Movimientos</string>
+    <string name="title_section2">Categorías</string>
+    <string name="title_section3">Cuentas</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_cuenta">Cuenta</string>
 
 </resources>
