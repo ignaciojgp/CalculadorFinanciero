@@ -75,7 +75,7 @@ public class Movimiento extends ActionBarActivity {
 
             movimiento.setCategoria(1);
 
-            Date now = new Date( dp_fecha.getYear(), dp_fecha.getMonth(),dp_fecha.getDayOfMonth());
+            Date now = new Date(   dp_fecha.getYear()-1900 , dp_fecha.getMonth(),dp_fecha.getDayOfMonth());
 
             movimiento.setFecha(now);
 

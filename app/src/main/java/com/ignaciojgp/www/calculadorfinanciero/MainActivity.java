@@ -10,10 +10,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 
+import com.ignaciojgp.www.calculadorfinanciero.dto.*;
+
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, MovimientosFragment.OnFragmentInteractionListener{
 
+
+    private int current_fragment_type=0;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -45,6 +49,7 @@ public class MainActivity extends ActionBarActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
 
+        current_fragment_type = position;
 
 
         switch (position) {
@@ -52,6 +57,8 @@ public class MainActivity extends ActionBarActivity
                 fragmentManager.beginTransaction()
                     .replace(R.id.container, MovimientosFragment.newInstance())
                     .commit();
+
+
                 break;
             case 1:
                 fragmentManager.beginTransaction()
@@ -103,8 +110,18 @@ public class MainActivity extends ActionBarActivity
         if (id == R.id.action_add) {
 
             Intent i = new Intent();
-            i.setClass(this,Movimiento.class);
 
+            switch (current_fragment_type) {
+                case 0:
+                    i.setClass(this, Movimiento.class);
+                    break;
+                case 1:
+                    i.setClass(this, Cuenta.class);
+                    break;
+                case 2:
+                    i.setClass(this, Movimiento.class);
+                    break;
+            }
             startActivity(i);
 
 
