@@ -7,8 +7,9 @@ package com.ignaciojgp.www.calculadorfinanciero.dto;
 // comentario aparte
 public class Cuenta {
     private double saldo;
-    private String nombre, color;
+    private String nombre;
     private long id;
+    private int color;
 
 
 
@@ -28,11 +29,11 @@ public class Cuenta {
         this.nombre = nombre;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
 

@@ -70,7 +70,7 @@ public final class GastosContract {
         public static final String COLUMN_NOMBRE_TYPE = _TYPE_TEXT;
 
         public static final String COLUMN_COLOR = "color";
-        public static final String COLUMN_COLOR_TYPE = _TYPE_TEXT;
+        public static final String COLUMN_COLOR_TYPE = _TYPE_INT;
 
         public static final String COLUMN_SALDO = "saldo";
         public static final String COLUMN_SALDO_TYPE = _TYPE_REAL;
@@ -96,7 +96,7 @@ public final class GastosContract {
         public static final String COLUMN_NOMBRE_TYPE = _TYPE_TEXT;
 
         public static final String COLUMN_COLOR = "color";
-        public static final String COLUMN_COLOR_TYPE = _TYPE_TEXT;
+        public static final String COLUMN_COLOR_TYPE = _TYPE_INT;
 
         public static final String CREATE = _CREATE+TABLE_NAME+" ( "+
                 _ID+_TYPE_INT+_PRIMARY_KEY+_AUTOINCREMENT +_COMMA +

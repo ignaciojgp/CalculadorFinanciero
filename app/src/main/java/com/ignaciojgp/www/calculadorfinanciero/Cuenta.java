@@ -1,17 +1,44 @@
 package com.ignaciojgp.www.calculadorfinanciero;
 
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 
-public class Cuenta extends ActionBarActivity {
+public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChangeListener {
+
+    private SeekBar rojoBar, verdeBar, azulBar;
+    private ImageView colorIV;
+    private TextView tv;
+
+    private int red,green,blue;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuenta);
+
+        colorIV = (ImageView) findViewById(R.id.imageView2);
+
+        rojoBar = (SeekBar) findViewById(R.id.seekBar);
+        verdeBar = (SeekBar) findViewById(R.id.seekBar2);
+        azulBar = (SeekBar) findViewById(R.id.seekBar3);
+
+        rojoBar.setOnSeekBarChangeListener(this);
+        verdeBar.setOnSeekBarChangeListener(this);
+        azulBar.setOnSeekBarChangeListener(this);
+
+        tv = (TextView) findViewById(R.id.titulotv);
+
     }
 
 
@@ -35,5 +62,45 @@ public class Cuenta extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+
+
+
+        if(seekBar == rojoBar){
+
+            red= (int) Math.round(256/100* progress);
+
+        }
+        if(seekBar == verdeBar){
+
+            green= (int) Math.round(256/100* progress);
+
+        }
+        if(seekBar == azulBar){
+
+            blue= (int) Math.round(256/100* progress);
+
+        }
+
+
+        int color = Color.argb(255,red,green,blue);
+
+        colorIV.setBackgroundColor(color);
+
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 }

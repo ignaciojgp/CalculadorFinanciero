@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.Color;
 
 import com.ignaciojgp.www.calculadorfinanciero.dao.Gastos;
 import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
@@ -16,7 +17,7 @@ import com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta;
  */
 public class GastosDbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
     public static final String DATABASE_NAME = "Gastos.db";
 
     Activity parent;
@@ -40,7 +41,7 @@ public class GastosDbHelper extends SQLiteOpenHelper {
 
         ContentValues cuentaInicial = new ContentValues();
 
-        cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_COLOR, "ff0000");
+        cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_COLOR, Color.argb(255,255,255,0));
         cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_NOMBRE, "Cuenta Base");
         cuentaInicial.put(GastosContract.CuentaEntry.COLUMN_SALDO, 10);
 
@@ -52,7 +53,7 @@ public class GastosDbHelper extends SQLiteOpenHelper {
 
         ContentValues categoriaInicial = new ContentValues();
 
-        categoriaInicial.put(GastosContract.CategoriaEntry.COLUMN_COLOR, "ff00FF");
+        categoriaInicial.put(GastosContract.CategoriaEntry.COLUMN_COLOR, Color.argb(255,255,0,0));
         categoriaInicial.put(GastosContract.CategoriaEntry.COLUMN_NOMBRE, "Gasto Generico");
 
 

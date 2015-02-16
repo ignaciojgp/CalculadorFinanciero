@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ignaciojgp.www.calculadorfinanciero.DataBases.GastosContract;
@@ -28,8 +29,13 @@ public class CuentasCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         TextView titulo_tv = (TextView)view.findViewById(R.id.textView);
+        ImageView img = (ImageView)view.findViewById(R.id.imageView);
+
+
         titulo_tv.setTextColor(view.getResources().getColor(android.R.color.black));
         titulo_tv.setText( cursor.getString(cursor.getColumnIndexOrThrow(GastosContract.CuentaEntry.COLUMN_NOMBRE)));
+        img.setBackgroundColor((int)cursor.getInt(cursor.getColumnIndexOrThrow(GastosContract.CuentaEntry.COLUMN_COLOR)));
+
 
     }
 }

@@ -6,7 +6,8 @@ package com.ignaciojgp.www.calculadorfinanciero.dto;
 public class Categoria {
 
     private long id;
-    private String nombre,color;
+    private String nombre;
+    private int color;
 
     public long getId() {
         return id;
@@ -24,11 +25,11 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
 }
