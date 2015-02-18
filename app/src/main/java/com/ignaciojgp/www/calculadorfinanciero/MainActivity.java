@@ -119,7 +119,7 @@ public class MainActivity extends ActionBarActivity
                     i.setClass(this, Cuenta.class);
                     break;
                 case 2:
-                    i.setClass(this, Movimiento.class);
+                    i.setClass(this, Cuenta.class);
                     break;
             }
             startActivity(i);

@@ -58,6 +58,14 @@ public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChange
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta cuenta = new com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta();
+
+            cuenta.setId(-1);
+            cuenta.setNombre(tv.getText().toString());
+            cuenta.setColor(Color.argb(255,red,green,blue));
+
+
             return true;
         }
 
@@ -94,6 +102,8 @@ public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChange
 
     }
 
+
+
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -103,4 +113,6 @@ public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChange
     public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
+
+
 }
