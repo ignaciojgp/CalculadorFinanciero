@@ -3,20 +3,22 @@ package com.ignaciojgp.www.calculadorfinanciero;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.ignaciojgp.www.calculadorfinanciero.dao.GastosDB;
 
 
 public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChangeListener {
 
     private SeekBar rojoBar, verdeBar, azulBar;
     private ImageView colorIV;
-    private TextView tv;
+    private EditText title_tv, saldo_tv;
+
 
     private int red,green,blue;
 
@@ -37,7 +39,8 @@ public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChange
         verdeBar.setOnSeekBarChangeListener(this);
         azulBar.setOnSeekBarChangeListener(this);
 
-        tv = (TextView) findViewById(R.id.titulotv);
+        title_tv = (EditText) findViewById(R.id.titulo_et);
+        saldo_tv = (EditText) findViewById(R.id.saldoted);
 
     }
 
@@ -57,13 +60,23 @@ public class Cuenta extends ActionBarActivity implements SeekBar.OnSeekBarChange
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_guardar) {
 
             com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta cuenta = new com.ignaciojgp.www.calculadorfinanciero.dto.Cuenta();
 
             cuenta.setId(-1);
-            cuenta.setNombre(tv.getText().toString());
+            cuenta.setNombre(title_tv.getText().toString());
             cuenta.setColor(Color.argb(255,red,green,blue));
+
+            double saldo = Double.valueOf(saldo_tv.getText().toString());
+
+            cuenta.setSaldo(saldo);
+
+            GastosDB gastosDB = new GastosDB(this);
+
+            gastosDB.save(cuenta);
+
+            finish();
 
 
             return true;

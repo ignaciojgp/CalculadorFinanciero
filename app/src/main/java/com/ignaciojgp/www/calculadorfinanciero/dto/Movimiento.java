@@ -43,7 +43,7 @@ public class Movimiento implements Serializable {
         return tipo;
     }
 
-    public void setTipo(long tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
@@ -59,7 +59,7 @@ public class Movimiento implements Serializable {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(long categoria) {
         this.categoria = categoria;
     }
 

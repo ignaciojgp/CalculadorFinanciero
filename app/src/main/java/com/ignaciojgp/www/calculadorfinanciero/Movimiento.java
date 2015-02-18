@@ -73,7 +73,7 @@ public class Movimiento extends ActionBarActivity {
 
             movimiento.setCantidad(d);
 
-            movimiento.setCategoria(1);
+            movimiento.setCategoria(sp_categoria.getAdapter().getItemId(sp_cuenta.getSelectedItemPosition()));
 
             Date now = new Date(   dp_fecha.getYear()-1900 , dp_fecha.getMonth(),dp_fecha.getDayOfMonth());
 
@@ -82,7 +82,7 @@ public class Movimiento extends ActionBarActivity {
 
             movimiento.setCuenta( sp_cuenta.getAdapter().getItemId(sp_cuenta.getSelectedItemPosition()));
             movimiento.setDescripcion("");
-            movimiento.setTipo(sp_categoria.getAdapter().getItemId(sp_cuenta.getSelectedItemPosition()));
+            movimiento.setTipo(1);
 
             GastosDB gastosDB = new GastosDB(this);
 
