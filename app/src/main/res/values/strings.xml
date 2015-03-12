@@ -31,5 +31,6 @@
     <string name="azul">Azul</string>
     <string name="color">Color</string>
     <string name="saldo">Saldo</string>
+    <string name="title_activity_categoria">Categoria</string>
 
 </resources>

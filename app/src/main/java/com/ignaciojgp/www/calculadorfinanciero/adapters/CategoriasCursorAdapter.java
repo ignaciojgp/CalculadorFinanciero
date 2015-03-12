@@ -33,7 +33,7 @@ public class CategoriasCursorAdapter extends CursorAdapter {
 
         titulo_tv.setTextColor(view.getResources().getColor(android.R.color.black));
         titulo_tv.setText( cursor.getString(cursor.getColumnIndexOrThrow(GastosContract.CategoriaEntry.COLUMN_NOMBRE)));
-        img.setBackgroundColor((int)cursor.getInt(cursor.getColumnIndexOrThrow(GastosContract.CuentaEntry.COLUMN_COLOR)));
+        img.setBackgroundColor((int)cursor.getInt(cursor.getColumnIndexOrThrow(GastosContract.CategoriaEntry.COLUMN_COLOR)));
 
     }
 }

@@ -32,6 +32,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ignaciojgp.www.calculadorfinanciero.MainActivity" />
         </activity>
+        <activity
+            android:name=".Categoria"
+            android:label="@string/title_activity_categoria" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ignaciojgp.www.calculadorfinanciero.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

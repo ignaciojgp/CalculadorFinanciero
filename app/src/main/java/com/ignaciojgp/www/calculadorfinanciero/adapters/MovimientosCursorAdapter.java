@@ -3,6 +3,7 @@ package com.ignaciojgp.www.calculadorfinanciero.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteCursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.ignaciojgp.www.calculadorfinanciero.DataBases.GastosContract;
+import com.ignaciojgp.www.calculadorfinanciero.Movimiento;
 import com.ignaciojgp.www.calculadorfinanciero.R;
 import com.ignaciojgp.www.calculadorfinanciero.dto.Periodo;
 
+import java.text.NumberFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -48,7 +51,10 @@ public class MovimientosCursorAdapter extends CursorAdapter {
 
 
         titulo_tv.setText(titulo);
-        cantidad_tv.setText(String.valueOf(cantidad));
+        NumberFormat format = NumberFormat.getCurrencyInstance();
+
+
+        cantidad_tv.setText(format.format(cantidad));
         fecha_tv.setText(d.toString());
 
 

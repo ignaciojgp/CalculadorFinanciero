@@ -116,7 +116,7 @@ public class MainActivity extends ActionBarActivity
                     i.setClass(this, Movimiento.class);
                     break;
                 case 1:
-                    i.setClass(this, Cuenta.class);
+                    i.setClass(this, Categoria.class);
                     break;
                 case 2:
                     i.setClass(this, Cuenta.class);
